@@ -1,6 +1,6 @@
 # Call Aunty
 
-
+Call Aunty is an SMS and web tool that allows 
 ## Quickstart
 The website can be accessed at http://03ed01b5.ngrok.io/.
 For the automated response with various survey questions: +1 226-242-0767
