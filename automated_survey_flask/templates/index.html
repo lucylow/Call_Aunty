@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+    <!--  Import Libraries-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- External Link to CSS file for Ryan--> 
+    <link rel="stylesheet"
+          href="https://dl.dropbox.com/s/xomi9sya16korza/index.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.1.2/parsley.min.js"></script>
+
+    
+    <!-- META DATA -->
+    
+    
+    <title>Call Aunty</title>
+</head>
+
+    
+<!-- OLD NAV BAR -->
+    
+    
+<!--    
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Survey Results</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">
+                        Index
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+-->
+    
+
+<!-- NEW NAV BAR -->    
+
+    
+<ul class="app-navbar">
+    <li><a href="javascript:void(0)" onclick="openView('Overview')">Overview</a></li>
+    <li><a href="javascript:void(0)" onclick="openView('Analytics')">Analytics</a></li>
+    <li><a href="javascript:void(0)" onclick="openView('Today')">Today</a></li>
+    <li><a href="javascript:void(0)" onclick="openView('Actions')">Actions</a></li>
+    <li><a href="javascript:void(0)" onclick="openView('Notes')">Notes</a></li>
+</ul>
+
+
+<!-- SET UP DIVS -->  
+    
+    
+<!-- OVERVIEW DIV -->  
+<div id="Overview" class="app-view">
+    <h2>Overview</h2>
+    <p>This is a profile of the woman you selected.</p>
+</div>
+
+    
+<!-- ANALYTICS DIV -->  
+<div id="Analytics" class="app-view">
+    <h2>Analytics</h2>
+    <p>Here is a detailed look at her health.</p> 
+</div>
+
+    
+<!-- TODAY DIV -->  
+<div id="Today" class="app-view">
+    <h2>Today</h2>
+
+    
+    <table class="today-table">
+       <tr>
+           <td>Preferred Name</td>
+           
+           {% for answer in questions.0.answers.all() %}
+
+               <td>{{answer.content}}</td>
+                   {% endfor %}    
+
+       </tr>
+
+       <tr>
+           <td>Phone Number</td>
+           
+           {% for answer in questions.1.answers.all() %}
+
+               <td>{{answer.content}}</td>
+                   {% endfor %}    
+
+       </tr>
+
+       <tr>
+           <td>Health Status</td>
+           
+           {% for answer in questions.2.answers.all() %}
+
+               <td>{{answer.content}}</td>
+                   {% endfor %}    
+
+       </tr>
+
+
+   </table>
+    
+    
+</div>
+
+    
+<!-- ACTIONS DIV -->  
+<div id="Actions" class="app-view">
+    <h2>Actions</h2>
+    <p>Here are specific recommendations.</p>
+</div>
+
+    
+<!-- NOTES DIV -->  
+<div id="Notes" class="app-view">
+    <h2>Orginal Code</h2>
+    
+    <!-- BEGIN TEMPLATE CODE -->
+
+    <div class="col-md-8">
+        <ul class="list-unstyled">
+            <li>
+
+                {% for question in questions %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Question: {{question.content}}
+                    </div>
+                    {% for answer in question.answers.all() %}
+                    <div class="panel-body">
+                        <ol class="list-group">
+                            <li class="list-group-item">Session SID: {{answer.session_id}}</li>
+                            <li class="list-group-item">
+                                Response: {{answer.content}}
+
+                                 <!--{Answer.query.delete()} -->
+                            </li>
+                        </ol>
+                    </div>
+
+
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+    
+<!-- END TEMPLATE CODE -->
+    
+</div>
+
+    
+<!-- RUN THE SCRIPT -->    
+
+    
+<script>
+openView("Overview")
+function openView(viewName) {
+    var i;
+    var x = document.getElementsByClassName("app-view");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    document.getElementById(viewName).style.display = "block";  
+}
+</script>
+    
+    
+</html>

@@ -1,0 +1,31 @@
+
+
+{
+  "questions": [
+    {
+      "body": "What would you like us to call you? To respect your privacy, this does not have to be your real name.",
+      "type": "text"
+    },
+    {
+      "body": "How old are you?",
+      "type": "numeric"
+    },
+    {
+      "body": "From 1 to 10, how healthy do you think you are?",
+      "type": "numeric"
+    },
+    {
+      "body": "Have you ever been pregnant before?",
+      "type": "boolean"
+    },
+    {
+      "body": "Were they all successful?",
+      "type": "boolean"
+    },
+    {
+      "body": "What is your phone number?",
+      "type": "numeric"
+    }
+  ],
+  "title": "Our Web App"
+}
