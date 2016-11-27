@@ -2,17 +2,25 @@
 <html>
 <head>
     
+    <!-- 
+    <link rel="icon" type="image/png" href="img/favicon.ico">  
+    -->
     
-    <!--  Import Libraries-->
+    
+    <!-- PULL IN RELATIVE LINKS -->
+    
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-    <!-- External Link to CSS file for Ryan--> 
     <link rel="stylesheet"
           href="https://dl.dropbox.com/s/xomi9sya16korza/index.css">
     
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional Theme
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    -->
     
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -25,6 +33,8 @@
     <title>Call Aunty</title>
 </head>
 
+    
+<body>
     
 <!-- OLD NAV BAR -->
     
@@ -66,27 +76,44 @@
     
 <!-- OVERVIEW DIV -->  
 <div id="Overview" class="app-view">
-    <h2>Overview</h2>
-    <p>This is a profile of the woman you selected.</p>
+    <h2>Aisha's Overview</h2>
+    
+    <table>
+        <tr><td>Phone</td><td>018-3431000</td></tr>
+        <tr><td>Age</td><td>17</td></tr>
+        <tr><td>Location</td><td>Kartikpur</td></tr>
+        <tr><td>Heath</td><td>Good (6/10)</td></tr>
+        <tr><td>Rish Level</td><td>Moderate</td></tr>
+        <tr><td>Last Visit</td><td>22 days ago</td></tr>
+    </table>
 </div>
 
     
 <!-- ANALYTICS DIV -->  
 <div id="Analytics" class="app-view">
-    <h2>Analytics</h2>
-    <p>Here is a detailed look at her health.</p> 
+    <h2>Aisha's Analytics</h2>
+    
+    <p>Health status over the last 5 months </p>
+    
+    <img class="icon" src="https://dl.dropbox.com/s/7pyt2d3pps1vz5q/today.png" width="500">
+    
+    
+    
+    
+    
 </div>
 
     
 <!-- TODAY DIV -->  
 <div id="Today" class="app-view">
-    <h2>Today</h2>
+    <h2>Today View</h2>
 
+    <img class="icon" src="https://dl.dropboxusercontent.com/s/d7pnxh8zr0ct0ad/actions.svg" width="50">
     
     <table class="today-table">
        <tr>
            <td>Preferred Name</td>
-           
+           <td>Aisha</td>
            {% for answer in questions.0.answers.all() %}
 
                <td>{{answer.content}}</td>
@@ -96,6 +123,7 @@
 
        <tr>
            <td>Phone Number</td>
+           <td>018-3431000</td>
            
            {% for answer in questions.1.answers.all() %}
 
@@ -105,7 +133,9 @@
        </tr>
 
        <tr>
-           <td>Health Status</td>
+           <td>Risk Level</td>
+           <td>Moderate</td>
+           <td></td>
            
            {% for answer in questions.2.answers.all() %}
 
@@ -123,48 +153,32 @@
     
 <!-- ACTIONS DIV -->  
 <div id="Actions" class="app-view">
-    <h2>Actions</h2>
+    <h2>Aisha's Actions</h2>
     <p>Here are specific recommendations.</p>
+        <ul>
+            <li>Reduce heavy lifting</li>
+            <li>Reduce exposure to cooking smoke</li>
+            <li>Visit clinic by Dec 15</li>
+        </ul>
 </div>
 
     
 <!-- NOTES DIV -->  
 <div id="Notes" class="app-view">
-    <h2>Orginal Code</h2>
+    <h2>Aisha's Notes</h2>
     
-    <!-- BEGIN TEMPLATE CODE -->
+        <p>Recent Notes</p>
+        <ul>
+            <li>Having trouble reducing heavy lifting</li>
+            <li>Needs to bring harvest to market and collect water daily</li>
 
-    <div class="col-md-8">
-        <ul class="list-unstyled">
-            <li>
-
-                {% for question in questions %}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Question: {{question.content}}
-                    </div>
-                    {% for answer in question.answers.all() %}
-                    <div class="panel-body">
-                        <ol class="list-group">
-                            <li class="list-group-item">Session SID: {{answer.session_id}}</li>
-                            <li class="list-group-item">
-                                Response: {{answer.content}}
-
-                                 <!--{Answer.query.delete()} -->
-                            </li>
-                        </ol>
-                    </div>
-
-
-                    {% endfor %}
-                </div>
-                {% endfor %}
-            </li>
         </ul>
-    </div>
-    
-<!-- END TEMPLATE CODE -->
-    
+    <br>
+        <form>
+            <input type="name" name="firstname" value="Add a note">
+            <input type="submit" value="Add">
+        </form>
+
 </div>
 
     
@@ -183,5 +197,19 @@ function openView(viewName) {
 }
 </script>
     
+
+</body>
     
 </html>
+
+
+<!-- SPARE TABLE    
+    <table>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+    </table>
+-->
