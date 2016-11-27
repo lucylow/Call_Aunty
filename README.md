@@ -1,7 +1,7 @@
 # Call Aunty
 
 CallAunty is an app which allows expectant mothers to call-in to determine if they are high risk and receive care. 
-One of the top 10 hacks for Devs Without Borders' Break Inequality Hackathon.
+One of the Top 10 Hacks for Devs Without Borders' Break Inequality Hackathon.
 
 # Inspiration 
 
