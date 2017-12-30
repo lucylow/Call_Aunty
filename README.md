@@ -11,7 +11,7 @@ Pregnant women in rural Bangladesh lack access to the appropriate healthcare ser
 
 Our solution is “Call Aunty”! This is a two part program that targets both the community health worker (CHW) as well as the pregnant women (let’s call her Aisha) living in rural Bangladesh. The Call Aunty process starts with a call from Aisha, initially with the help of her CHW during their first appointment. At this point Aisha meets Aunty who asks her a few personal and health related questions to register her into the Call Aunty service. At the end of this call Aunty automatically determines Aisha’s risk level, her estimated due date and gives a brief, tailored recommendation based on the information given. The CHW sees the results of Aisha’s answers on her app as well as the recommendation given by Aunty. Based on Aisha’s risk level, Call Aunty schedules automated check-in calls to get updates on any symptoms and revise Aisha’s risk level and recommendations throughout her pregnancy. Our goal is to reduce the number of CHW visits needed for low-risk women so that these workers can focus on higher-risk women.
 
-The website can be accessed at http://03ed01b5.ngrok.io/.
+The website can be accessed at http://03ed01b5.ngrok.io/ (Note: As of 2017, project is currently not online.)
 
 For the automated response with various survey questions: +1 226-242-0767
 
