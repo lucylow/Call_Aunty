@@ -17,11 +17,7 @@ For the automated response with various survey questions: +1 226-242-0767
 
 An alternate number for next steps via text message: +1 226-242-2127
 
-
 ![alt text](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/452/500/datas/gallery.jpg)
-
-![alt text](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/452/501/datas/gallery.jpg)
-
 
 #Strategy for Early Adoption of Call Aunty
 
